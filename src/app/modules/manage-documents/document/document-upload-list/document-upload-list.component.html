@@ -1,0 +1,71 @@
+<app-menu></app-menu>
+<div class="card">
+    <div class="row">
+        <div class="col-md-6">
+            <h4 class="card-header" style="font-weight: bold;
+      text-align: left;
+      margin-left: 4px;
+      margin-bottom: 15px;">My Uploads</h4>
+        </div>
+        <div class="col-md-6">
+            <input #fileUpload type="file" (click)="fileUpload.value = null" (change)="importFile($event)"
+                style="display:none" />
+            <button class="btn btn-primary" style="float: right;" (click)="fileUpload.click()">Upload</button>
+        </div>
+    </div>
+
+    <div class="row"
+        style="margin-right: 0px !important;margin-left: 0px !important; height: 210px;overflow-x: hidden;overflow-y: auto;text-align:justify;">
+        <table class="table table-bordered  table-striped">
+            <thead style="background-color: lightgray;border: 1px solid black;">
+                <tr>
+                    <th style="text-align: center;">Label</th>
+                    <th style="text-align: center;">File Name</th>
+                    <th style="text-align: center;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of DocumentArray">
+                    <td style="width: 30%;">{{item.Label}}</td>
+                    <td style="width: 40%;">{{item.FileName}}</td>
+                    <td style="width: 30%;"><a (click)="editModal(item.FileUploadId)">Edit |</a>
+                        <a (click)="showModal(item.FileUploadId)">Delete |</a>
+                        <a *ngIf="item.FileType === 'image/jpeg' || item.FileType === 'image/png' "
+                            (click)="preViewModal(item.FileUploadId)">PreView |</a>
+                        <a target="_self" href={{item.FilePath}} download="{{'file.'+ item.FileType.split('/')[1]}}">Download</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- <div class="row">
+        <div class="col-md-6">
+            <h4 class="card-header" style="font-weight: bold;text-align: left;margin-left: 4px;margin-bottom: 15px;">Shared Uploads</h4>
+        </div>      
+    </div>
+    <div class="row"
+        style="margin-right: 0px !important;margin-left: 0px !important; height: 210px;overflow-x: hidden;overflow-y: auto;text-align:justify;">
+        <table class="table table-bordered  table-striped">
+            <thead style="background-color: lightgray;border: 1px solid black;">
+                <tr>
+                    <th style="text-align: center;">Label</th>
+                    <th style="text-align: center;">File Name</th>
+                    <th style="text-align: center;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of DocumentArray">
+                    <td style="width: 30%;">{{item.Label}}</td>
+                    <td style="width: 40%;">{{item.FileName}}</td>
+                    <td style="width: 30%;"><a (click)="editModal(item.FileUploadId)">Edit |</a>
+                        <a (click)="showModal(item.FileUploadId)">Delete |</a>
+                        <a *ngIf="item.FileType === 'image/jpeg' || item.FileType === 'image/png' "
+                            (click)="preViewModal(item.FileUploadId)">PreView |</a>
+                        <a target="_self" href="{{'data:application/pdf;base64' + item.FilePath}}"
+                            download="{{'file.'+ item.FileType.split('/')[1]}}">Download</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div> -->
+</div>

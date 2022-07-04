@@ -1,0 +1,48 @@
+<div class="card" style="margin-top: 25px;">
+    <h4 class="card-header" style="font-weight: bold;">Login</h4><br>
+    <div class="card-body">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="username">Email<span class="text-danger">*</span></label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" placeholder="Enter Email" formControlName="Email" class="form-control" />
+                        <div class="text-danger" style="margin-left: -8px;"
+                            *ngIf="loginForm.get('Email').hasError('required') && loginForm.get('Email').touched">
+                            <p style="float: left;margin-left: 26px;">Email is required</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="password">Password<span class="text-danger">*</span></label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" placeholder="Enter Password" formControlName="Password"
+                            class="form-control" />
+                        <div class="text-danger" style="margin-left: 4px;"
+                            *ngIf="loginForm.get('Password').hasError('required') && loginForm.get('Password').touched">
+                            <p style="float: left;margin-left: 13px;">Password is required</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group registerBtn">
+                <button class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+                <button class="btn btn-danger" style="margin-left: 5px;" [routerLink]="['/layout']">Cancel</button>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-danger" style="text-align: right;margin-left: 32px;"
+                            *ngIf="errorMessage == true">User does not exist. Please signup first</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

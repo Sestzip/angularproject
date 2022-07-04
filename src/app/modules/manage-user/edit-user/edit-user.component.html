@@ -1,0 +1,40 @@
+<app-menu></app-menu>
+<div class="card" style="margin-top: 25px;">
+    <h4 class="card-header" style="font-weight: bold;">Edit User Information</h4><br>
+    <div class="card-body">
+        <form [formGroup]="editUserForm" (ngSubmit)="onSubmit(editUserForm)">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="username">Full Name<span class="text-danger">*</span></label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" placeholder="Enter Full Name" formControlName="FullName"
+                            class="form-control" />
+                        <div class="text-danger" style="margin-left: -8px;"
+                            *ngIf="editUserForm.get('FullName').hasError('required') && editUserForm.get('FullName').touched">
+                            Full Name is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="username">Email<span class="text-danger">*</span></label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" placeholder="Enter Email" formControlName="Email" class="form-control" />
+                        <div class="text-danger" style="margin-left: 4px;"
+                            *ngIf="editUserForm.get('Email').hasError('required') && editUserForm.get('Email').touched">
+                            Email is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group registerBtn">
+                <button class="btn btn-primary" [disabled]="editUserForm.invalid">Save</button>
+            </div>
+        </form>
+    </div>
+</div>

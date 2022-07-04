@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <button type="button" class="close pull-right" (click)="onCancel()" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title ml-auto pl-5" id="exampleModalLabel">
+      {{title}}
+    </h4>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+        <div class="col-md-3"><p>File Description</p></div>
+        <div class="col-md-6"><input type="text" placeholder="Change the value" style="width: 100%;" [(ngModel)]="data"/></div>
+        <div class="col-md-3">
+          <input #fileUpload type="file" (click)="fileUpload.value = null" (change)="importFile($event)"
+              style="display:none" />
+          <button class="btn btn-primary btn-sm" style="float: right;" (click)="fileUpload.click()">Upload</button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer d-flex justify-content-center m-3">
+    <button type="submit" class="btn btn-primary btn-sm" (click)="onConfirm()">Save</button>
+    <button type="button" class="btn btn-dark btn-pill btn-sm" (click)="onCancel()">Cancel</button>
+  </div>

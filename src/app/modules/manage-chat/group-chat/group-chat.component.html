@@ -1,0 +1,55 @@
+<app-menu></app-menu>
+<div class="card" style="border: 1px solid black;font-weight: bold;text-align: center;height: 29px;">
+    <h4 class="card-header" style="font-weight: bold;text-align: center;margin-top: 1px;">Group Chats</h4>
+</div>
+<div class="card" style="border: 1px solid black;font-weight: bold;text-align: center;height: 63%;">
+    <div class="message-box">
+        <ng-container *ngFor="let item of chatArray;let i=index;">
+            <div *ngIf="item.SendMessage != ''" class="outgoing-chat">
+                <div class="outgoing-chat-msg">
+                    <div class="outgoing-msg-inbox">
+                        <span class="send-time">{{userName}}<img style="width: 18px;"
+                                src="assets/image/user.png"></span>
+                        <p *ngIf="item.SendImage === false">{{item.SendMessage}}</p>
+                            <img *ngIf="item.SendImage === true" style="width: 82px;" [src]=item.SendMessage />
+                        <span class="send-time">{{item.SendTime}}</span>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="item.ReceiveMessage != ''" class="recieved-chat-msg">
+                <div class="recieved-chat-msg-box">
+                    <div class="recieved-chat-msg-inbox">
+                        <span class="recieve-time"><img style="width: 15px;"
+                                src="assets/image/admin.png">{{item.ReceiveName}}</span>
+                        <p *ngIf="item.ReceiveImage === false">{{item.ReceiveMessage}}</p>
+                            <img *ngIf="item.ReceiveImage === true" style="width: 82px;" [src]=item.ReceiveMessage />
+                        <span class="recieve-time">{{item.ReceiveTime}}</span>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+<div class="card" style="border: 1px solid black;font-weight: bold;text-align: center;height: 35px;">
+    <div class="row">
+        <div class="col-md-2">
+            <p style="float: right;margin-top: 1px;">{{userName}}</p>
+        </div>
+        <form [formGroup]="chatForm">
+            <div class="col-md-8">
+                <input type="text" style="width: 100%;" formControlName="chatField" placeholder="Enter a message..." />
+            </div>
+            <div class="col-md-2">
+                <input #fileUpload type="file" (click)="fileUpload.value = null" (change)="importFile($event)"
+                    style="display:none" accept="image/*" />
+                <button class="rounded-circle" style="background-color: lightskyblue;width: 26%;border-radius: 19px;float: left;"
+                    [disabled]="chatForm.invalid" (click)="sendMessage(false)" title="Send"><i class="fa fa-paper-plane"
+                        aria-hidden="true"></i></button>
+                <button class="rounded-circle"
+                    style="background-color: lightskyblue;width: 26%;border-radius: 19px;margin-left: 2px;float: left;"
+                    (click)="fileUpload.click()" title="Choose Image"><i class="fa fa-file-image-o"
+                        aria-hidden="true"></i></button>
+            </div>
+        </form>
+    </div>
+</div>

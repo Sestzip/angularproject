@@ -1,0 +1,162 @@
+.container {
+    max-width: 406px !important;
+    margin: auto;
+    margin-top: 3%;
+    font-family: sans-serif;
+    letter-spacing: 0.5%;
+}
+
+.chat-page {
+    padding: 0 0 50px 0;
+}
+
+.msg-inbox {
+    border: 1px solid #ccc;
+    overflow: hidden;
+    padding-bottom: 0px;
+    background-color: #d3d3d338;
+}
+
+.chats {
+    padding: 30px 15px 0px 25px;
+}
+
+.msg-date {
+    margin: 2px;
+}
+
+.msg-date p {
+    text-align: center;
+}
+
+.msg-page {
+    height: 431px;
+
+}
+
+.default-recieved-chat {
+    display: inline-block;
+    padding: 0 0 0 10px;
+    vertical-align: top;
+    width: 192%;
+}
+
+.recieved-chat-msg {
+    display: inline-block;
+    padding: 0 0 0 10px;
+    vertical-align: top;
+    width: 92%;
+}
+
+.recieved-chat-msg-inbox {
+    float: left;
+}
+
+.recieved-chat-msg-inbox p {
+    background: #f4cfcf;
+    border-radius: 10px;
+    color: #646464;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 10px 5px 12px;
+    width: 75%;
+    border-bottom-left-radius: 1px;
+}
+
+.outgoing-chat {
+    overflow: hidden;
+    margin: -5px 20px;
+}
+
+.outgoing-msg-inbox p {
+    background: #ff7200;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 0;
+    color: #fff;
+    padding: 5px 10px 5px 12px;
+    width: 100%;
+    border-bottom-right-radius: 1px;
+}
+
+.outgoing-chat-msg {
+    float: right;
+    margin-left: 31%;
+}
+
+.outgoing-chat-img {
+    display: inline-block;
+    width: 20px;
+}
+
+.recieve-time {
+    text-align: left;
+    color: #777;
+    display: block;
+    font-size: 8px;
+    margin: 2px 0 0;
+
+}
+
+.send-time {
+    color: #777;
+    display: block;
+    font-size: 8px;
+    margin: 2px 0 0;
+    text-align: right;
+}
+
+
+.msg-bottom {
+    position: relative;
+    height: 10px;
+    size: 50px;
+    padding-bottom: -6px;
+}
+
+.input-group {
+    margin-top: 13px;
+    margin-right: 20px;
+    outline: none !important;
+    border-radius: 20px;
+    width: 91% !important;
+    background-color: #fff;
+    margin-left: -21px;
+    margin-left: -28px;
+}
+
+.form-control {
+    border: none !important;
+    size: 0px;
+}
+
+.form-control :focus {
+    border-color: none !important;
+    box-shadow: none !important;
+}
+
+.span {
+    width: 30px;
+    margin-right: 1px;
+}
+
+.mate {
+    width: 29px;
+    margin-left: -22px;
+
+
+}
+
+.matebox {
+    width: 391px;
+    margin-left: 15px;
+    width: 389px;
+    margin-left: 0px;
+    margin-top: 1px;
+}
+
+.message-box {
+    height: 100%;
+    overflow: auto;
+}

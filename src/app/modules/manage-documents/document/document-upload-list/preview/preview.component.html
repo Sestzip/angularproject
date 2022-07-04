@@ -1,0 +1,10 @@
+<div class="modal-header">
+    <button type="button" class="close pull-right" (click)="onCancel()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title ml-auto pl-5" id="exampleModalLabel">
+        {{title}}
+    </h4>
+    <img [src]=data style="width:50%;">
+    <button type="button" class="btn btn-dark btn-pill btn-sm" style="margin-top: 40%;float: right;" (click)="onCancel()">Cancel</button>
+</div>

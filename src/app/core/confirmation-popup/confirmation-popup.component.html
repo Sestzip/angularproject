@@ -1,0 +1,14 @@
+<div class="modal-header">
+  <button type="button" class="close pull-right" (click)="onCancel()" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h4 class="modal-title ml-auto pl-5" id="exampleModalLabel">
+    {{title}} </h4>
+</div>
+<div class="modal-body">
+  Are you sure want to delete record ?
+</div>
+<div class="modal-footer d-flex justify-content-center m-3">
+  <button type="submit" class="btn btn-primary" (click)="onConfirm()">Ok</button>
+  <button type="button" class="btn btn-dark btn-pill" (click)="onCancel()">Cancel</button>
+</div>
